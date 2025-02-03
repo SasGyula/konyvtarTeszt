@@ -1,18 +1,33 @@
 package hu.szamalk.modell;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 public class Konyv {
     private String cim;
     private int ar, kiadasiEv;
     private List<String> szerzok;
-    HashSet<String> set = new HashSet<>();
+
+    public static CimComporator rendezCim() {
+        return new CimComporator();
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Konyv konyv = (Konyv) obj;
+        return Objects.equals(szerzok, konyv.szerzok) &&
+                Objects.equals(cim, konyv.cim);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(cim, ar, kiadasiEv, szerzok);
+    }
 
     public void setSzerzokLista(List<String> szerzok) {
-        set(szerzok);
-        this.szerzok = szerzok;
+        this.szerzok = new ArrayList<>(new HashSet<>(szerzok));
     }
 
     @Override

@@ -53,38 +53,38 @@ class KonyvTest {
         konyv.setSzerzok("sz4");
         assertTrue(konyv.getSzerzok().size() > szerzok.size());
     }
-//
-//    @Test
-//    void testEgyformak(){
-//        Konyv k1 = new Konyv("sz", "cim1", 1000,1978);
-//        k1.setAr(2000);
-//        k1.setKiadasiEv(2000);
-//        Konyv k2 = new Konyv("sz", "cim1", 1000,1978);
-//        assertEquals(k1, k2);
-//    }
-//
-//    @Test
-//    void testRendezesCim(){
-//        Konyv k1 = new Konyv("aaa", "acim1", 1001,2001);
-//        Konyv k3 = new Konyv("ccc", "ccim3", 1003,2003);
-//        Konyv k4 = new Konyv("xxx", "xcim4", 1004,2004);
-//        Konyv k2 = new Konyv("bbb", "bcim2", 1002,2002);
-//        TreeSet<Konyv> rendezett = new TreeSet<>(Konyv.rendezCim());
-//        rendezett.add(k1);
-//        rendezett.add(k2);
-//        rendezett.add(k3);
-//        rendezett.add(k4);
-//
-//        Konyv k;
-//        k = new Konyv("www", "ac", 1001,2001);
-//        assertEquals(rendezett.ceiling(k), k1);
-//        k = new Konyv("www", "bc", 1001,2001);
-//        assertEquals(rendezett.ceiling(k), k2);
-//        k = new Konyv("www", "cc", 1001,2001);
-//        assertEquals(rendezett.ceiling(k), k3);
-//        k = new Konyv("www", "xc", 1001,2001);
-//        assertEquals(rendezett.ceiling(k), k4);
-//    }
+
+    @Test
+    void testEgyformak(){
+        Konyv k1 = new Konyv("sz", "cim1", 1000,1978);
+        k1.setAr(2000);
+        k1.setKiadasiEv(2000);
+        Konyv k2 = new Konyv("sz", "cim1", 1000,1978);
+        assertEquals(k1, k2);
+    }
+
+    @Test
+    void testRendezesCim(){
+        Konyv k1 = new Konyv("aaa", "acim1", 1001,2001);
+        Konyv k3 = new Konyv("ccc", "ccim3", 1003,2003);
+        Konyv k4 = new Konyv("xxx", "xcim4", 1004,2004);
+        Konyv k2 = new Konyv("bbb", "bcim2", 1002,2002);
+        TreeSet<Konyv> rendezett = new TreeSet<>(Konyv.rendezCim());
+        rendezett.add(k1);
+        rendezett.add(k2);
+        rendezett.add(k3);
+        rendezett.add(k4);
+
+        Konyv k;
+        k = new Konyv("www", "ac", 1001,2001);
+        assertEquals(rendezett.ceiling(k), k1);
+        k = new Konyv("www", "bc", 1001,2001);
+        assertEquals(rendezett.ceiling(k), k2);
+        k = new Konyv("www", "cc", 1001,2001);
+        assertEquals(rendezett.ceiling(k), k3);
+        k = new Konyv("www", "xc", 1001,2001);
+        assertEquals(rendezett.ceiling(k), k4);
+    }
 //
 //    @Test
 //    void testRendezesAr(){
