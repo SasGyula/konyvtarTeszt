@@ -2,13 +2,17 @@ package hu.szamalk.modell;
 
 import java.util.*;
 
-public class Konyv {
+public class Konyv implements Comparable<Konyv> {
     private String cim;
     private int ar, kiadasiEv;
     private List<String> szerzok;
 
     public static CimComporator rendezCim() {
         return new CimComporator();
+    }
+
+    public static ArComporator rendezAr() {
+        return new ArComporator();
     }
 
 
@@ -24,6 +28,10 @@ public class Konyv {
     @Override
     public int hashCode() {
         return Objects.hash(cim, ar, kiadasiEv, szerzok);
+    }
+    @Override
+    public int compareTo(Konyv other) {
+        return this.szerzok.get(0).compareTo(other.szerzok.get(0));
     }
 
     public void setSzerzokLista(List<String> szerzok) {
@@ -79,4 +87,6 @@ public class Konyv {
     public void setSzerzok(String szerzo){
         this.szerzok.add(szerzo);
     }
+
+
 }

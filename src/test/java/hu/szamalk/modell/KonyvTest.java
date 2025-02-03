@@ -85,41 +85,41 @@ class KonyvTest {
         k = new Konyv("www", "xc", 1001,2001);
         assertEquals(rendezett.ceiling(k), k4);
     }
-//
-//    @Test
-//    void testRendezesAr(){
-//        Konyv k0 = new Konyv("aaa", "acim1", 1000,2001);
-//        Konyv k1 = new Konyv("aaa", "acim1", 1001,2001);
-//        Konyv k4 = new Konyv("ccc", "ccim3", 1003,2003);
-//        Konyv k3 = new Konyv("xxx", "xcim4", 1004,2004);
-//        Konyv k2 = new Konyv("bbb", "bcim2", 1002,2002);
-//        List<Konyv> konyvek = Arrays.asList(k0, k1, k2, k3, k4);
-//        Collections.shuffle(konyvek);
-//
-//        konyvek.sort(Konyv.rendezAr());
-//        assertEquals(1000, konyvek.get(0).getAr());
-//        assertEquals(1001, konyvek.get(1).getAr());
-//        assertEquals(1002, konyvek.get(2).getAr());
-//        assertEquals(1003, konyvek.get(3).getAr());
-//        assertEquals(1004, konyvek.get(4).getAr());
-//    }
-//
-//    @Test
-//    void testRendezesAlapErtElsoSzerzore(){
-//        List<String>szerzok;
-//
-//        szerzok = List.of("aaa", "xxx");
-//        Konyv k0 = new Konyv(szerzok, "cim0", 1000,1978);
-//
-//        szerzok = List.of("bbb", "ccc");
-//        Konyv k1 = new Konyv(szerzok, "cim1", 1000,1978);
-//
-//        List<Konyv> konyvek = Arrays.asList(k0,k1);
-//        Collections.shuffle(konyvek);
-//
-//        Collections.sort(konyvek);
-//
-//        assertEquals(k0, konyvek.get(0));
-//        assertEquals(k1, konyvek.get(1));
-//    }
+
+    @Test
+    void testRendezesAr(){
+        Konyv k0 = new Konyv("aaa", "acim1", 1000,2001);
+        Konyv k1 = new Konyv("aaa", "acim1", 1001,2001);
+        Konyv k4 = new Konyv("ccc", "ccim3", 1003,2003);
+        Konyv k3 = new Konyv("xxx", "xcim4", 1004,2004);
+        Konyv k2 = new Konyv("bbb", "bcim2", 1002,2002);
+        List<Konyv> konyvek = Arrays.asList(k0, k1, k2, k3, k4);
+        Collections.shuffle(konyvek);
+
+        konyvek.sort(Konyv.rendezAr());
+        assertEquals(1000, konyvek.get(0).getAr());
+        assertEquals(1001, konyvek.get(1).getAr());
+        assertEquals(1002, konyvek.get(2).getAr());
+        assertEquals(1003, konyvek.get(3).getAr());
+        assertEquals(1004, konyvek.get(4).getAr());
+    }
+
+    @Test
+    void testRendezesAlapErtElsoSzerzore(){
+        List<String>szerzok;
+
+        szerzok = List.of("aaa", "xxx");
+        Konyv k0 = new Konyv(szerzok, "cim0", 1000,1978);
+
+        szerzok = List.of("bbb", "ccc");
+        Konyv k1 = new Konyv(szerzok, "cim1", 1000,1978);
+
+        List<Konyv> konyvek = Arrays.asList(k0,k1);
+        Collections.shuffle(konyvek);
+
+        Collections.sort(konyvek);
+
+        assertEquals(k0, konyvek.get(0));
+        assertEquals(k1, konyvek.get(1));
+    }
 }
